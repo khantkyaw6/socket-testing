@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"
+			integrity="sha512-tE1z+95+lMCGwy+9PnKgUSIeHhvioC9lMlI7rLWU0Ps3XTdjRygLcy4mLuL0JAoK4TLdQEyP0yOl/9dMOqpH/Q=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<title>Socket IO App</title>
+	</head>
+	<body>
+		<h3>Hello World</h3>
+		<script>
+			const socket = io();
+			socket.on('connectedRoom', (data) => {
+				document.write(data);
+			});
+		</script>
+	</body>
+</html>
+
+<!-- //Client to server side start
+<!-- socket.emit(
+	'myCystomEventFromClientSide',
+	'A custom message from Client side to server side'
+); -->
+<!-- //Client to server side end ================================= //Server to Client
+Start -->
+<!-- socket.on('myCustomEvent', function (data) { 
+document.write(data.description); }); -->
+<!-- //Server to Client End =================================  -->
+
+<!-- socket.on('newuserconnect', (data) => {
+	console.log(data);
+	document.write(data.message);
+}); -->
+
+<!-- 	// let socket = io('/custom-namespace');
+			// socket.on('customEvent', function (data) {
+			// 	document.body.innerHTML = '';
+			// 	document.write(data);
+			// }); -->
